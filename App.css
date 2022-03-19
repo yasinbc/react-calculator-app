@@ -1,0 +1,289 @@
+/* .App {
+  background: rgb(43, 168, 252);
+  width: 100vw;
+  height: 100vh;
+}
+
+#container{
+  left: 280px;
+  top: 20px;
+  position: absolute;
+}
+
+#display {
+  display: flex;
+  width: 500px;
+  height: 100px;
+  background: grey;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#display h3{
+  position: relative;
+  right: 40px;
+}
+
+#buttons {
+  width: 500px;
+  height: 300px;
+  background: blue;
+  display: grid;
+  grid-template-areas:
+    "ac ac slash mult"
+    "seven eight nine sub"
+    "four five six sum"
+    "one two three equals"
+    "zero zero dot equals";
+}
+
+#buttons button {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2rem;
+}
+
+#clear {
+  grid-area: ac;
+}
+
+#divide {
+  grid-area: slash;
+}
+
+#multiply {
+  grid-area: mult;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#subtract {
+  grid-area: sub;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#add {
+  grid-area: sum;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#equals {
+  grid-area: equals;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#decimal {
+  grid-area: dot;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  line-height: 2;
+  margin: 0;
+}
+
+button {
+  opacity: 0.6;
+  font-size: 16px;
+  cursor: pointer;
+  background: #eee;
+  border: 1px solid #cdcdcd;
+  border-radius: 1px;
+  font-family: "Orbitron", sans-serif;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color: #fefefe;
+}
+
+.main-container {
+  background-image: linear-gradient(
+    to right top,
+    #cddc39,
+    #00da79,
+    #00c9cf,
+    #00adff,
+    #0080ff
+  );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  box-shadow: 0 4px 32px -4px rgba(0, 0, 0, 0.5);
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  padding: 6px;
+  width: 320px;
+  height: 480px;
+  display: grid;
+  grid-gap: 2px 2px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 3fr 3fr 3fr 3fr 3fr;
+  grid-template-areas:
+    "inputs inputs inputs inputs"
+    "display display display display"
+    "operators operators operators operators"
+    "numbers numbers numbers controllers"
+    "numbers numbers numbers controllers"
+    "numbers numbers numbers controllers"
+    "numbers numbers numbers controllers";
+}
+
+#inputs {
+  font-size: 10px;
+  grid-area: inputs;
+  min-height: 28px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+#display {
+  font-size: 24px;
+  text-shadow: 0 0 4px -1px rgba(255, 255, 255, 1);
+  grid-area: display;
+  text-align: right;
+}
+
+.numbers {
+  display: grid;
+  grid-gap: 2px 2px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "seven eight nine" "four five six" "one two three" "zero zero decimal";
+  grid-area: numbers;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#decimal {
+  grid-area: decimal;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+.operators {
+  display: grid;
+  grid-gap: 2px 2px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "add subtract multiply divide";
+  grid-area: operators;
+}
+
+#add {
+  grid-area: add;
+}
+
+#subtract {
+  grid-area: subtract;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+.controllers {
+  display: grid;
+  grid-gap: 2px 2px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "clear" "sign" "equals" "equals";
+  grid-area: controllers;
+}
+
+#sign {
+  grid-area: sign;
+}
+
+#clear {
+  grid-area: clear;
+}
+
+#equals {
+  grid-area: equals;
+}
